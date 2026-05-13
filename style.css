@@ -1,0 +1,568 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+
+    font-family: Arial, sans-serif;
+
+    min-height: 100vh;
+
+    background-image:
+    url(
+        "assets/backgrounds/bg_utama.png"
+    );
+
+    background-size: cover;
+
+    background-position: center;
+
+    background-repeat: no-repeat;
+
+    background-attachment: fixed;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 20px;
+
+    overflow-x: hidden;
+}
+
+.section{
+
+    display: none;
+
+    width: 100%;
+
+    justify-content: center;
+
+    align-items: center;
+}
+
+.section.aktif{
+
+    display: flex;
+}
+
+.kotak{
+
+    width: 100%;
+
+    max-width: 520px;
+
+    background: rgba(
+        255,
+        255,
+        255,
+        0.95
+    );
+
+    backdrop-filter: blur(6px);
+
+    border-radius: 35px;
+
+    padding: 35px;
+
+    text-align: center;
+
+    position: relative;
+
+    box-shadow:
+    0 10px 30px rgba(
+        0,
+        0,
+        0,
+        0.18
+    );
+}
+
+h1{
+
+    color: #FF9800;
+
+    font-size: 42px;
+
+    margin-bottom: 20px;
+
+    font-weight: bold;
+}
+
+h2{
+
+    color: #333;
+
+    margin-bottom: 20px;
+
+    line-height: 1.5;
+}
+
+p{
+
+    color: #555;
+
+    line-height: 1.7;
+
+    margin-bottom: 20px;
+
+    font-size: 16px;
+}
+
+.menu{
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 15px;
+}
+
+button{
+
+    border: none;
+
+    border-radius: 18px;
+
+    padding: 16px;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.25s;
+}
+
+button:hover{
+
+    transform:
+    scale(1.03);
+
+    box-shadow:
+    0 5px 15px rgba(
+        0,
+        0,
+        0,
+        0.12
+    );
+}
+
+/* BUTTON COLOR */
+
+.mula{
+
+    background: #FFD54F;
+
+    color: #5D4037;
+}
+
+.quiz{
+
+    background: #4FC3F7;
+
+    color: white;
+}
+
+.panduan{
+
+    background: #66BB6A;
+
+    color: white;
+}
+
+.info{
+
+    background: #FF8A65;
+
+    color: white;
+}
+
+.laman{
+
+    background: #BA68C8;
+
+    color: white;
+}
+
+.ulang{
+
+    background: #EF5350;
+
+    color: white;
+}
+
+.seterusnya{
+
+    background: #29B6F6;
+
+    color: white;
+}
+
+.cuba{
+
+    background: #FFCA28;
+
+    color: #5D4037;
+}
+
+/* QUIZ */
+
+.jawapan{
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 15px;
+}
+
+.pilihan{
+
+    background: #F5F5F5;
+
+    border:
+    3px solid #B3E5FC;
+
+    color: #333;
+}
+
+.pilihan:hover{
+
+    background: #E1F5FE;
+}
+
+.betul{
+
+    background: #66BB6A !important;
+
+    color: white !important;
+}
+
+.salah{
+
+    background: #EF5350 !important;
+
+    color: white !important;
+}
+
+/* PROGRESS */
+
+.kotak-progress{
+
+    width: 100%;
+
+    height: 16px;
+
+    background: #E0E0E0;
+
+    border-radius: 30px;
+
+    overflow: hidden;
+
+    margin-bottom: 20px;
+}
+
+#progress-bar{
+
+    width: 0%;
+
+    height: 100%;
+
+    background: linear-gradient(
+        to right,
+        #FFD54F,
+        #FF9800
+    );
+
+    transition: 0.3s;
+}
+
+/* SCORE */
+
+.pencapaian{
+
+    display: flex;
+
+    gap: 15px;
+
+    margin-bottom: 25px;
+}
+
+.score-box{
+
+    flex: 1;
+
+    background: #F5F5F5;
+
+    border-radius: 20px;
+
+    padding: 15px;
+
+    border:
+    3px solid #E1F5FE;
+}
+
+.score-box h3{
+
+    margin-bottom: 10px;
+
+    color: #FF9800;
+}
+
+.score-box p{
+
+    margin: 0;
+
+    font-size: 24px;
+
+    font-weight: bold;
+}
+
+/* POPUP */
+
+.popup{
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: rgba(
+        0,
+        0,
+        0,
+        0.45
+    );
+
+    display: none;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 20px;
+
+    z-index: 999;
+}
+
+.popup-kandungan{
+
+    background: white;
+
+    width: 100%;
+
+    max-width: 420px;
+
+    border-radius: 30px;
+
+    padding: 30px;
+
+    text-align: center;
+
+    animation:
+    popupMasuk 0.25s ease;
+}
+
+.popup-button{
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 12px;
+
+    margin-top: 20px;
+}
+
+.popup-character{
+
+    width: 140px;
+
+    margin-bottom: 20px;
+
+    animation:
+    bounce 1s infinite ease-in-out;
+}
+
+/* SOUND BUTTON */
+
+.sound-button{
+
+    position: absolute;
+
+    top: 20px;
+    right: 20px;
+
+    background: #FFCA28;
+
+    color: #5D4037;
+
+    font-size: 13px;
+
+    padding: 10px 14px;
+
+    border-radius: 14px;
+}
+
+/* GENDER */
+
+.gender-container{
+
+    display: flex;
+
+    gap: 20px;
+
+    justify-content: center;
+
+    align-items: center;
+}
+
+.gender-card{
+
+    background: #F5F5F5;
+
+    padding: 20px;
+
+    border-radius: 25px;
+
+    cursor: pointer;
+
+    transition: 0.25s;
+
+    width: 180px;
+
+    border:
+    4px solid transparent;
+}
+
+.gender-card:hover{
+
+    transform:
+    scale(1.05);
+
+    border-color: #FF9800;
+}
+
+.gender-image{
+
+    width: 100%;
+
+    max-width: 120px;
+
+    margin-bottom: 15px;
+
+    object-fit: contain;
+}
+
+/* ANIMATION */
+
+@keyframes bounce{
+
+    0%{
+
+        transform:
+        translateY(0px);
+    }
+
+    50%{
+
+        transform:
+        translateY(-10px);
+    }
+
+    100%{
+
+        transform:
+        translateY(0px);
+    }
+}
+
+@keyframes popupMasuk{
+
+    from{
+
+        opacity: 0;
+
+        transform:
+        scale(0.8);
+    }
+
+    to{
+
+        opacity: 1;
+
+        transform:
+        scale(1);
+    }
+}
+
+/* RESPONSIVE */
+
+@media(max-width: 700px){
+
+    .gender-container{
+
+        flex-direction: column;
+    }
+
+    .kotak{
+
+        padding: 25px;
+    }
+
+    h1{
+
+        font-size: 34px;
+    }
+
+    h2{
+
+        font-size: 22px;
+    }
+
+    button{
+
+        font-size: 15px;
+
+        padding: 14px;
+    }
+
+    .popup-character{
+
+        width: 120px;
+    }
+}
+
+@media screen
+and (orientation: landscape)
+and (max-height: 600px){
+
+    .kotak{
+
+        max-width: 900px;
+    }
+
+    .gender-container{
+
+        flex-direction: row;
+    }
+
+    h1{
+
+        font-size: 30px;
+    }
+
+    h2{
+
+        font-size: 20px;
+    }
+}

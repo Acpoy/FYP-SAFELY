@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="ms">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+    content="width=device-width, initial-scale=1.0">
+
+    <title>
+        SAFELY
+    </title>
+
+    <link rel="stylesheet"
+    href="style.css">
+
+</head>
+
+<body>
+
+    <!-- GENDER SECTION -->
+
+    <section
+    id="gender-section"
+    class="section aktif">
+
+        <div class="kotak">
+
+            <h1>
+                SAFELY
+            </h1>
+
+            <p>
+
+                Pilih watak anda
+                sebelum memulakan
+                pembelajaran.
+
+            </p>
+
+            <div class="gender-container">
+
+                <!-- BOY -->
+
+                <div
+                class="gender-card"
+                onclick="pilihGender('boy')">
+
+                    <img
+                    src="assets/characters/boy_welcome.png"
+
+                    class="gender-image"
+
+                    alt="Boy">
+
+                    <h2>
+
+                        LELAKI
+
+                    </h2>
+
+                </div>
+
+                <!-- GIRL -->
+
+                <div
+                class="gender-card"
+                onclick="pilihGender('girl')">
+
+                    <img
+                    src="assets/characters/girl_welcome.png"
+
+                    class="gender-image"
+
+                    alt="Girl">
+
+                    <h2>
+
+                        PEREMPUAN
+
+                    </h2>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- HOME SECTION -->
+
+    <section
+    id="home-section"
+    class="section">
+
+        <div class="kotak">
+
+            <button
+            id="sound-button"
+            class="sound-button"
+            onclick="toggleSound()">
+
+                BUKA BUNYI
+
+            </button>
+
+            <h1>
+                SAFELY
+            </h1>
+
+            <p>
+
+                Platform pembelajaran
+                keselamatan jalan raya
+                untuk kanak-kanak.
+
+            </p>
+
+            <div class="pencapaian">
+
+                <div class="score-box">
+
+                    <h3>
+                        Skor Tertinggi
+                    </h3>
+
+                    <p id="high-score">
+
+                        0%
+
+                    </p>
+
+                </div>
+
+                <div class="score-box">
+
+                    <h3>
+                        Soalan Dijawab
+                    </h3>
+
+                    <p id="jumlah-jawab">
+
+                        0 / 15
+
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="menu">
+
+                <button
+                class="mula"
+                onclick="mulaKuizBaru()">
+
+                    MULA
+
+                </button>
+
+                <button
+                class="quiz"
+                id="button-teruskan"
+                onclick="teruskanKuiz()">
+
+                    TERUSKAN
+
+                </button>
+
+                <button
+                class="panduan"
+                onclick="bukaPanduan()">
+
+                    PANDUAN
+
+                </button>
+
+                <button
+                class="info"
+                onclick="bukaInfo()">
+
+                    INFO
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- QUIZ SECTION -->
+
+    <section
+    id="quiz-section"
+    class="section">
+
+        <div class="kotak">
+
+            <h1>
+                Kuiz Keselamatan
+            </h1>
+
+            <div class="kotak-progress">
+
+                <div
+                id="progress-bar">
+
+                </div>
+
+            </div>
+
+            <p id="nombor-soalan">
+
+                Soalan 1 / 15
+
+            </p>
+
+            <h2 id="soalan">
+
+                Soalan akan muncul di sini
+
+            </h2>
+
+            <div class="jawapan">
+
+                <button
+                class="pilihan"
+                onclick="semakJawapan(0)">
+
+                    Jawapan 1
+
+                </button>
+
+                <button
+                class="pilihan"
+                onclick="semakJawapan(1)">
+
+                    Jawapan 2
+
+                </button>
+
+                <button
+                class="pilihan"
+                onclick="semakJawapan(2)">
+
+                    Jawapan 3
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- RESULT SECTION -->
+
+    <section
+    id="result-section"
+    class="section">
+
+        <div class="kotak">
+
+            <h1>
+                Kuiz Selesai
+            </h1>
+
+            <h2 id="markah-akhir">
+
+                100%
+
+            </h2>
+
+            <p id="mesej">
+
+                Tahniah!
+
+            </p>
+
+            <div class="menu">
+
+                <button
+                class="cuba"
+                onclick="mainSemula()">
+
+                    CUBA LAGI
+
+                </button>
+
+                <button
+                class="laman"
+                onclick="kembaliHome()">
+
+                    LAMAN UTAMA
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- PANDUAN SECTION -->
+
+    <section
+    id="panduan-section"
+    class="section">
+
+        <div class="kotak">
+
+            <h1>
+                Panduan
+            </h1>
+
+            <p>
+
+                1. Baca soalan
+                dengan teliti.
+
+                <br><br>
+
+                2. Pilih jawapan
+                yang betul.
+
+                <br><br>
+
+                3. Jika jawapan salah,
+                anda boleh ulang
+                atau pergi ke
+                soalan seterusnya.
+
+                <br><br>
+
+                4. Markah tertinggi
+                akan disimpan.
+
+            </p>
+
+            <div class="menu">
+
+                <button
+                class="mula"
+                onclick="mulaKuizBaru()">
+
+                    MULA
+
+                </button>
+
+                <button
+                class="laman"
+                onclick="kembaliHome()">
+
+                    LAMAN UTAMA
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- INFO SECTION -->
+
+    <section
+    id="info-section"
+    class="section">
+
+        <div class="kotak">
+
+            <h1>
+                Info
+            </h1>
+
+            <p>
+
+                SAFELY ialah platform
+                pembelajaran interaktif
+                yang membantu
+                kanak-kanak memahami
+                keselamatan jalan raya
+                dengan cara yang mudah
+                dan menyeronokkan.
+
+            </p>
+
+            <div class="menu">
+
+                <button
+                class="laman"
+                onclick="kembaliHome()">
+
+                    LAMAN UTAMA
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- POPUP BETUL -->
+
+    <div
+    id="popup-betul"
+    class="popup">
+
+        <div class="popup-kandungan">
+
+            <img
+            id="popup-betul-image"
+
+            src="assets/characters/girl_trophy.png"
+
+            class="popup-character"
+
+            alt="Tahniah">
+
+            <h2>
+
+                Tahniah!
+
+            </h2>
+
+            <p>
+
+                Jawapan anda betul.
+
+            </p>
+
+            <div class="popup-button">
+
+                <button
+                class="laman"
+                onclick="kembaliHomePopup()">
+
+                    LAMAN UTAMA
+
+                </button>
+
+                <button
+                class="seterusnya"
+                onclick="tutupPopupBetul()">
+
+                    SOALAN SETERUSNYA
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- POPUP SALAH -->
+
+    <div
+    id="popup-salah"
+    class="popup">
+
+        <div class="popup-kandungan">
+
+            <img
+            id="popup-salah-image"
+
+            src="assets/characters/girl_wrong.png"
+
+            class="popup-character"
+
+            alt="Jawapan Salah">
+
+            <h2>
+
+                Jawapan Salah
+
+            </h2>
+
+            <p>
+
+                Adakah anda ingin
+                ulang soalan ini?
+
+            </p>
+
+            <div class="popup-button">
+
+                <button
+                class="laman"
+                onclick="kembaliHomePopup()">
+
+                    LAMAN UTAMA
+
+                </button>
+
+                <button
+                class="ulang"
+                onclick="ulangSoalan()">
+
+                    ULANG
+
+                </button>
+
+                <button
+                class="seterusnya"
+                onclick="teruskanSoalan()">
+
+                    SOALAN SETERUSNYA
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script
+    src="script.js">
+
+    </script>
+
+</body>
+
+</html>
